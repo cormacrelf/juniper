@@ -219,7 +219,7 @@ pub fn impl_enum(ast: &syn::DeriveInput, is_internal: bool) -> TokenStream {
                 executor: &'a #juniper_path::Executor<Self::Context, __S>,
             ) -> #juniper_path::BoxFuture<'a, #juniper_path::ExecutionResult<__S>> {
                 use #juniper_path::GraphQLType;
-                use futures::future;
+                use #juniper_path::futures::future;
                 let v = self.resolve(info, selection_set, executor);
                 future::FutureExt::boxed(future::ready(v))
             }

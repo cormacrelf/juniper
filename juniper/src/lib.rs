@@ -94,6 +94,10 @@ Juniper has not reached 1.0 yet, thus some API instability should be expected.
 #[doc(hidden)]
 pub extern crate serde;
 
+#[cfg(feature = "async")]
+#[doc(hidden)]
+pub extern crate futures;
+
 #[cfg(any(test, feature = "expose-test-schema"))]
 extern crate serde_json;
 

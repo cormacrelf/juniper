@@ -863,7 +863,7 @@ impl GraphQLTypeDefiniton {
                                     Err(e) => Err(e),
                                 }
                             };
-                            use futures::future;
+                            use #juniper_crate_name::futures::future;
                             future::FutureExt::boxed(f)
                         },
                     )
@@ -880,7 +880,7 @@ impl GraphQLTypeDefiniton {
                                     Err(e) => Err(e),
                                 }
                             };
-                            use futures::future;
+                            use #juniper_crate_name::futures::future;
                             future::FutureExt::boxed(f)
                         )
                     } else {
@@ -890,7 +890,7 @@ impl GraphQLTypeDefiniton {
                                 Ok(None) => Ok(#juniper_crate_name::Value::null()),
                                 Err(e) => Err(e),
                             };
-                            use futures::future;
+                            use #juniper_crate_name::futures::future;
                             future::FutureExt::boxed(future::ready(v))
                         )
                     };
@@ -930,7 +930,7 @@ impl GraphQLTypeDefiniton {
                     ) -> #juniper_crate_name::BoxFuture<'b, #juniper_crate_name::ExecutionResult<#scalar>>
                         where #scalar: Send + Sync,
                     {
-                        use futures::future;
+                        use #juniper_crate_name::futures::future;
                         use #juniper_crate_name::GraphQLType;
                         match field {
                             #( #resolve_matches_async )*
